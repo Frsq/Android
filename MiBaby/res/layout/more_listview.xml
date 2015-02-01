@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tvConfig"
+        android:layout_width="match_parent"
+        android:layout_height="35sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/aqua"
+        android:drawableLeft="@drawable/config"
+        android:drawableRight="@drawable/config_next"
+        android:gravity="center_vertical"
+        android:text="@string/config"
+        android:textSize="15sp" />
+    
+
+
+</LinearLayout>
