@@ -1,1 +1,1 @@
-Include some android source
+目录为记录在学习Android中使用过的一些代码
