@@ -53,6 +53,9 @@ public final class R {
         /**  菊兰色 
          */
         public static final int cadetblue=0x7f040071;
+        /**  半透明 
+         */
+        public static final int calendar_top_bg=0x7f040094;
         /**  碧绿色 
          */
         public static final int chartreuse=0x7f040064;
@@ -468,49 +471,55 @@ public final class R {
         public static final int add_item=0x7f020000;
         public static final int background=0x7f020001;
         public static final int calendar=0x7f020002;
-        public static final int config=0x7f020003;
-        public static final int config_next=0x7f020004;
-        public static final int delete=0x7f020005;
-        public static final int details=0x7f020006;
-        public static final int edit=0x7f020007;
-        public static final int ic_launcher=0x7f020008;
-        public static final int more=0x7f020009;
-        public static final int more2=0x7f02000a;
-        public static final int next_click=0x7f02000b;
-        public static final int next_default=0x7f02000c;
-        public static final int next_selector=0x7f02000d;
-        public static final int note=0x7f02000e;
-        public static final int previous_click=0x7f02000f;
-        public static final int previous_default=0x7f020010;
-        public static final int previous_selector=0x7f020011;
-        public static final int reminder=0x7f020012;
-        public static final int select=0x7f020013;
-        public static final int share=0x7f020014;
-        public static final int textselector=0x7f020015;
-        public static final int theme=0x7f020016;
-        public static final int theme32=0x7f020017;
+        public static final int calendar_month_left=0x7f020003;
+        public static final int calendar_month_right=0x7f020004;
+        public static final int config=0x7f020005;
+        public static final int config_next=0x7f020006;
+        public static final int delete=0x7f020007;
+        public static final int details=0x7f020008;
+        public static final int edit=0x7f020009;
+        public static final int ic_launcher=0x7f02000a;
+        public static final int more=0x7f02000b;
+        public static final int more2=0x7f02000c;
+        public static final int next_click=0x7f02000d;
+        public static final int next_default=0x7f02000e;
+        public static final int next_selector=0x7f02000f;
+        public static final int note=0x7f020010;
+        public static final int previous_click=0x7f020011;
+        public static final int previous_default=0x7f020012;
+        public static final int previous_selector=0x7f020013;
+        public static final int reminder=0x7f020014;
+        public static final int select=0x7f020015;
+        public static final int share=0x7f020016;
+        public static final int textselector=0x7f020017;
+        public static final int theme=0x7f020018;
+        public static final int theme32=0x7f020019;
     }
     public static final class id {
-        public static final int action_settings=0x7f090014;
+        public static final int action_settings=0x7f090018;
         public static final int btnSaveNote=0x7f090002;
-        public static final int calendarview=0x7f090008;
+        public static final int calendar=0x7f09000c;
+        public static final int calendarCenter=0x7f090009;
+        public static final int calendarLeft=0x7f09000a;
+        public static final int calendarRight=0x7f09000b;
         public static final int etNoteContent=0x7f090001;
         public static final int etNoteTitle=0x7f090000;
-        public static final int lvReminder=0x7f090012;
-        public static final int notice_dialog_delete=0x7f09000b;
-        public static final int notice_dialog_details=0x7f09000c;
-        public static final int notice_dialog_edit=0x7f09000a;
-        public static final int notice_dialog_share=0x7f090009;
+        public static final int layout_calendar=0x7f090008;
+        public static final int lvReminder=0x7f090016;
+        public static final int notice_dialog_delete=0x7f09000f;
+        public static final int notice_dialog_details=0x7f090010;
+        public static final int notice_dialog_edit=0x7f09000e;
+        public static final int notice_dialog_share=0x7f09000d;
         public static final int tvCalendar=0x7f090004;
-        public static final int tvConfig=0x7f09000d;
+        public static final int tvConfig=0x7f090011;
         public static final int tvMore=0x7f090007;
         public static final int tvNote=0x7f090006;
-        public static final int tvNoteAddItem=0x7f090011;
-        public static final int tvNoteContent=0x7f09000f;
-        public static final int tvNoteCreateTime=0x7f090010;
-        public static final int tvNoteTitle=0x7f09000e;
+        public static final int tvNoteAddItem=0x7f090015;
+        public static final int tvNoteContent=0x7f090013;
+        public static final int tvNoteCreateTime=0x7f090014;
+        public static final int tvNoteTitle=0x7f090012;
         public static final int tvReminder=0x7f090005;
-        public static final int tvSysBuilder=0x7f090013;
+        public static final int tvSysBuilder=0x7f090017;
         public static final int viewpager=0x7f090003;
     }
     public static final class layout {
@@ -573,5 +582,6 @@ public final class R {
         /** 模糊
          */
         public static final int NoticeDialog=0x7f070002;
+        public static final int main_bar_text_style=0x7f070003;
     }
 }

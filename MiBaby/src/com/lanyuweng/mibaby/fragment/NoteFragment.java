@@ -31,7 +31,6 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.lanyuweng.NoticeDialog.NoticeDialog;
 import com.lanyuweng.mibaby.AddNoteActivity;
 import com.lanyuweng.mibaby.R;
 import com.lanyuweng.mibaby.DataUtil.DatabaseManager;
@@ -46,11 +45,8 @@ public class NoteFragment extends ListFragment implements OnScrollListener,
 
 	private SimpleAdapter adapter;
 	private DatabaseManager db_manager;
-	private NoticeDialog noticeDialog;
 
 	private ListView listView;
-	private int VIEW_COUNT = 10;
-	private int index = 0;
 	// all the notes in the database
 	private int totalCount;
 	private TextView tvNoteAddItem;
@@ -175,10 +171,6 @@ public class NoteFragment extends ListFragment implements OnScrollListener,
 			
 			
 		});
-//		DeleteNoteItem(arg2);
-//
-//		loadAllNoteItem();
-//		adapter.notifyDataSetChanged();
 		return false;
 	}
 
