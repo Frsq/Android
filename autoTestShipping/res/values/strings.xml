@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">autoTestShipping</string>
+    <string name="action_settings">Settings</string>
+    <string name="content">航运e票通主要流程测试</string>
+    <string name="button_testall">开始测试</string>
+    <string name="button_download">下载测试需要APK</string>
+
+</resources>
