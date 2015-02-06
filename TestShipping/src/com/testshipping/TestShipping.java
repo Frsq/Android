@@ -19,9 +19,9 @@ public class TestShipping extends ActivityInstrumentationTestCase2 {
 	
 	
 	private static Class launcherActivityClass;
-	private static String phone_no = "18589028920";
+	private static String phone_no = "**********"; //å¡«å†™è¾“å…¥çš„ç”µè¯å·ç 
 	private static String phone_sc = " ";
-	private static final int ticket_pay_way = 3; //Ä¬ÈÏÊ¹ÓÃÏÖ½ğÕË»§Ö§¸¶£¬2ÎªÖ§¸¶±¦¿ì½İÖ§¸¶£¬3ÎªÎ¢ĞÅÖ§¸¶
+	private static final int ticket_pay_way = 3; //é»˜è®¤ä½¿ç”¨ç°é‡‘è´¦æˆ·æ”¯ä»˜ï¼Œ2ä¸ºæ”¯ä»˜å®å¿«æ·æ”¯ä»˜ï¼Œ3ä¸ºå¾®ä¿¡æ”¯ä»˜
 	private static int now_day;
 	private boolean is_login = true;
 
@@ -51,7 +51,7 @@ public class TestShipping extends ActivityInstrumentationTestCase2 {
 	protected void setUp() throws Exception{
 		solo = new Solo(getInstrumentation(),getActivity());
 //		getUserInfo();
-		Log.v(Tag,"get activity¡£¡£¡£");
+		Log.v(Tag,"get activityã€‚ã€‚ã€‚");
 	}
 	
 	@Override
@@ -71,40 +71,40 @@ public class TestShipping extends ActivityInstrumentationTestCase2 {
 		
 		solo.waitForActivity(LAUNCHER_ACTIVITY_FULL_CLASSNAME, 5000);
 
-		//µã»÷½øÈëÂò´¬Æ±µÄÒ³Ãæ
-		View textView = solo.getCurrentActivity().findViewById(4);//3¡¢4¡¢5·Ö±ğ´ú±íÖ÷Òªµ±ÖĞµÄ¿Éµã»÷µÄÈı¸ö£¬°´Ë³Ğò½øĞĞ
+		//ç‚¹å‡»è¿›å…¥ä¹°èˆ¹ç¥¨çš„é¡µé¢
+		View textView = solo.getCurrentActivity().findViewById(4);//3ã€4ã€5åˆ†åˆ«ä»£è¡¨ä¸»è¦å½“ä¸­çš„å¯ç‚¹å‡»çš„ä¸‰ä¸ªï¼ŒæŒ‰é¡ºåºè¿›è¡Œ
 		solo.clickOnView(textView);
 		
-		if (solo.searchText("Íü¼ÇÃÜÂë")){
-			Log.v(Tag,"Î´µÇÂ¼£¬½øÈëµÇÂ¼½çÃæ");
+		if (solo.searchText("å¿˜è®°å¯†ç ")){
+			Log.v(Tag,"æœªç™»å½•ï¼Œè¿›å…¥ç™»å½•ç•Œé¢");
 			Log.v(Tag,"starting ooooo");
 			solo.clearEditText(0);
 			solo.enterText(0, phone_no);
 			solo.clearEditText(1);
 			solo.enterText(1, phone_sc);
-			solo.clickOnButton("µÇÂ¼");
+			solo.clickOnButton("ç™»å½•");
 		}
 		
 		
-		if (solo.searchText("³äÖµ")){
-			Log.v(Tag, "ÒÑµÇÂ¼£¬µÇÂ¼³É¹¦...");
+		if (solo.searchText("å……å€¼")){
+			Log.v(Tag, "å·²ç™»å½•ï¼Œç™»å½•æˆåŠŸ...");
 			Log.v(Tag, "get_user_info is success.");
-			//TODO ½ØÍ¼²Ù×÷
-			solo.clickOnText("Ïû·ÑÃ÷Ï¸");
+			//TODO æˆªå›¾æ“ä½œ
+			solo.clickOnText("æ¶ˆè´¹æ˜ç»†");
 			solo.scrollDown();
 			solo.goBack();
 		}
 		
-		solo.clickOnText("ÍË³öµÇÂ¼");
+		solo.clickOnText("é€€å‡ºç™»å½•");
 		solo.waitForDialogToOpen(1000);
-		solo.clickOnButton("È·ÈÏ");
+		solo.clickOnButton("ç¡®è®¤");
 	}
 	
 	public boolean IsLogout(){
 		try{
-			solo.clickOnText("ÍË³öµÇÂ¼");
+			solo.clickOnText("é€€å‡ºç™»å½•");
 			solo.waitForDialogToOpen(1000);
-			solo.clickOnButton("È·ÈÏ");
+			solo.clickOnButton("ç¡®è®¤");
 			return true;
 		}catch(Exception e){
 			e.printStackTrace();
@@ -117,148 +117,148 @@ public class TestShipping extends ActivityInstrumentationTestCase2 {
 		View textView = solo.getCurrentActivity().findViewById(4);
 		solo.clickOnView(textView);
 		
-		if(solo.searchText("³äÖµ")){
+		if(solo.searchText("å……å€¼")){
 			if(IsLogout()){
 				solo.sleep(1000);
-				if(solo.searchText("Íü¼ÇÃÜÂë")){
-					Log.v(Tag,"µÇ³ö³É¹¦");
+				if(solo.searchText("å¿˜è®°å¯†ç ")){
+					Log.v(Tag,"ç™»å‡ºæˆåŠŸ");
 				}else{
-					Log.v(Tag,"µÇ³öÊ§°Ü");
+					Log.v(Tag,"ç™»å‡ºå¤±è´¥");
 				}
 			}else{
-				Log.v(Tag,"µÇ³öÊ§°Ü");
+				Log.v(Tag,"ç™»å‡ºå¤±è´¥");
 			}
 		}
 		
-		if(solo.searchText("Íü¼ÇÃÜÂë")){
+		if(solo.searchText("å¿˜è®°å¯†ç ")){
 			
 		}
 	}
 	
 
 	public void testMyOrderAndPay() throws Exception{
-		Log.v(Tag,"ÎÒµÄ¶©µ¥");
-		String clickorder = "±¾µØ¶©µ¥";
+		Log.v(Tag,"æˆ‘çš„è®¢å•");
+		String clickorder = "æœ¬åœ°è®¢å•";
 		is_login = IsLogin();
 		solo.waitForActivity(LAUNCHER_ACTIVITY_FULL_CLASSNAME, 1000);
 		
-		//µã»÷½øÈëÂò´¬Æ±µÄÒ³Ãæ
-		View textView = solo.getCurrentActivity().findViewById(5);//3¡¢4¡¢5·Ö±ğ´ú±íÖ÷Òªµ±ÖĞµÄ¿Éµã»÷µÄÈı¸ö£¬°´Ë³Ğò½øĞĞ
+		//ç‚¹å‡»è¿›å…¥ä¹°èˆ¹ç¥¨çš„é¡µé¢
+		View textView = solo.getCurrentActivity().findViewById(5);//3ã€4ã€5åˆ†åˆ«ä»£è¡¨ä¸»è¦å½“ä¸­çš„å¯ç‚¹å‡»çš„ä¸‰ä¸ªï¼ŒæŒ‰é¡ºåºè¿›è¡Œ
 		solo.clickOnView(textView);		
 		
 		if(is_login){
 			//TODO
-			clickorder = "ÎÒµÄ¶©µ¥";
+			clickorder = "æˆ‘çš„è®¢å•";
 		}else{
 			//TODO
-			clickorder = "±¾µØ¶©µ¥";
+			clickorder = "æœ¬åœ°è®¢å•";
 		}
 
 
 		solo.clickOnButton(clickorder);
-		solo.clickOnButton("²éÑ¯¶©µ¥");
+		solo.clickOnButton("æŸ¥è¯¢è®¢å•");
 		solo.clickOnButton(clickorder);
 		
-		solo.clickOnButton(3);//±¾µØ¶©µ¥£¬²éÑ¯¶©µ¥£¬´¬Æ±¶©µ¥£»·Ö±ğ¶ÔÓ¦button indexÎ´1,2,3
+		solo.clickOnButton(3);//æœ¬åœ°è®¢å•ï¼ŒæŸ¥è¯¢è®¢å•ï¼Œèˆ¹ç¥¨è®¢å•ï¼›åˆ†åˆ«å¯¹åº”button indexæœª1,2,3
 		
-		if(solo.searchText("Î´Ê¹ÓÃ")){
-			solo.clickOnText("Î´Ê¹ÓÃ");
+		if(solo.searchText("æœªä½¿ç”¨")){
+			solo.clickOnText("æœªä½¿ç”¨");
 			solo.sleep(1000);
 			
-			if(solo.searchText("¶©µ¥Ò»")){
-				if(solo.searchButton("Á¢¼´¸¶¿î")){
-					solo.clickOnButton("Á¢¼´¸¶¿î");
+			if(solo.searchText("è®¢å•ä¸€")){
+				if(solo.searchButton("ç«‹å³ä»˜æ¬¾")){
+					solo.clickOnButton("ç«‹å³ä»˜æ¬¾");
 					SelectPayWay(is_login);
 				}
 //				
-//				if(solo.searchText("·¢ËÍÅóÓÑ")){
-//					solo.clickOnText("·¢ËÍÅóÓÑ",1);
+//				if(solo.searchText("å‘é€æœ‹å‹")){
+//					solo.clickOnText("å‘é€æœ‹å‹",1);
 //					solo.waitForDialogToOpen();
 //					solo.enterText(0, phone_no);
-//					solo.clickOnButton("·¢ËÍ");
+//					solo.clickOnButton("å‘é€");
 //				}
 				
 			}
-//			solo.clickOnText("ÀúÊ·");
+//			solo.clickOnText("å†å²");
 //			solo.sleep(1000);
 //			solo.goBack();
 			
 		}		
 //		solo.sleep(1000);
-//		solo.clickOnText("²éÑ¯¶©µ¥");
+//		solo.clickOnText("æŸ¥è¯¢è®¢å•");
 //		solo.enterText(0, phone_no);
-////		solo.clickOnButton("»ñÈ¡ÑéÖ¤Âë");
+////		solo.clickOnButton("è·å–éªŒè¯ç ");
 //		solo.goBack();		
 	}
 	
 	@SuppressWarnings("unused")
 	public void testMyOrderAndCancelPay() throws Exception{
-		Log.v(Tag,"ÎÒµÄ¶©µ¥");
+		Log.v(Tag,"æˆ‘çš„è®¢å•");
 		final String clickorder ;
 		is_login = IsLogin();
 		solo.waitForActivity(LAUNCHER_ACTIVITY_FULL_CLASSNAME, 1000);
 		
-		//µã»÷½øÈëÂò´¬Æ±µÄÒ³Ãæ
-		View textView = solo.getCurrentActivity().findViewById(5);//3¡¢4¡¢5·Ö±ğ´ú±íÖ÷Òªµ±ÖĞµÄ¿Éµã»÷µÄÈı¸ö£¬°´Ë³Ğò½øĞĞ
+		//ç‚¹å‡»è¿›å…¥ä¹°èˆ¹ç¥¨çš„é¡µé¢
+		View textView = solo.getCurrentActivity().findViewById(5);//3ã€4ã€5åˆ†åˆ«ä»£è¡¨ä¸»è¦å½“ä¸­çš„å¯ç‚¹å‡»çš„ä¸‰ä¸ªï¼ŒæŒ‰é¡ºåºè¿›è¡Œ
 		solo.clickOnView(textView);		
 		
 		if(is_login){
 			//TODO
-			clickorder = "ÎÒµÄ¶©µ¥";
+			clickorder = "æˆ‘çš„è®¢å•";
 		}else{
 			//TODO
-			clickorder = "±¾µØ¶©µ¥";
+			clickorder = "æœ¬åœ°è®¢å•";
 		}
 		solo.clickOnButton(3);
-		if(solo.searchText("¶©µ¥Ò»")){
-			if(solo.searchButton("È¡Ïû¶©µ¥")){
-				solo.clickOnButton("È¡Ïû¶©µ¥");
+		if(solo.searchText("è®¢å•ä¸€")){
+			if(solo.searchButton("å–æ¶ˆè®¢å•")){
+				solo.clickOnButton("å–æ¶ˆè®¢å•");
 				solo.waitForDialogToOpen(1000);
-				solo.clickOnButton("·ÅÆúÈ¡Ïû");
+				solo.clickOnButton("æ”¾å¼ƒå–æ¶ˆ");
 			}
 			solo.waitForDialogToClose(1000);
 			
-			if(solo.searchButton("È¡Ïû¶©µ¥")){
-				solo.clickOnButton("È¡Ïû¶©µ¥");
+			if(solo.searchButton("å–æ¶ˆè®¢å•")){
+				solo.clickOnButton("å–æ¶ˆè®¢å•");
 				solo.waitForDialogToOpen(1000);
-				solo.clickOnButton("È·ÈÏÈ¡Ïû");
+				solo.clickOnButton("ç¡®è®¤å–æ¶ˆ");
 			}
 		}
 	}
 	
 
 	public void testOrderSingleTicket() throws Exception{
-		Log.v(Tag,"Âòµ¥³Ì´¬Æ±");
-		Log.v(Tag,"testOrderSingleTicket¡£¡£¡£¡£");
+		Log.v(Tag,"ä¹°å•ç¨‹èˆ¹ç¥¨");
+		Log.v(Tag,"testOrderSingleTicketã€‚ã€‚ã€‚ã€‚");
 		solo.waitForActivity(LAUNCHER_ACTIVITY_FULL_CLASSNAME, 5000);
 		is_login=IsLogin();
 		
-		//µã»÷½øÈëÂò´¬Æ±µÄÒ³Ãæ
-		View BuyTicket = solo.getCurrentActivity().findViewById(3);//3¡¢4¡¢5·Ö±ğ´ú±íÖ÷Òªµ±ÖĞµÄ¿Éµã»÷µÄÈı¸ö£¬°´Ë³Ğò½øĞĞ
+		//ç‚¹å‡»è¿›å…¥ä¹°èˆ¹ç¥¨çš„é¡µé¢
+		View BuyTicket = solo.getCurrentActivity().findViewById(3);//3ã€4ã€5åˆ†åˆ«ä»£è¡¨ä¸»è¦å½“ä¸­çš„å¯ç‚¹å‡»çš„ä¸‰ä¸ªï¼ŒæŒ‰é¡ºåºè¿›è¡Œ
 		solo.clickOnView(BuyTicket);
 		
 
-		solo.clickOnRadioButton(0);//Ò³ÃæÊ¹ÓÃRadioButton(µ¥³Ì)Îª0£¬Íù·µÎª1
+		solo.clickOnRadioButton(0);//é¡µé¢ä½¿ç”¨RadioButton(å•ç¨‹)ä¸º0ï¼Œå¾€è¿”ä¸º1
 		
-		//Ñ¡Ôñ³ö·¢µØµã
-		Log.v(Tag, "Ñ¡Ôñ³ö·¢µØµã");
-		solo.clickOnText("³ö·¢µØµã");
-		solo.clickOnText("¹ãÖİ-·¬Ø®Á«»¨É½");
+		//é€‰æ‹©å‡ºå‘åœ°ç‚¹
+		Log.v(Tag, "é€‰æ‹©å‡ºå‘åœ°ç‚¹");
+		solo.clickOnText("å‡ºå‘åœ°ç‚¹");
+		solo.clickOnText("å¹¿å·-ç•ªç¦ºè²èŠ±å±±");
 		solo.sleep(1000);
 		
-		//Ñ¡Ôñµ½´ïµØµã
-		Log.v(Tag, "Ñ¡Ôñµ½´ïµØµã");
-		solo.clickOnText("µ½´ïµØµã");
-		solo.clickOnText("Ïã¸Û-ÖĞ¸ÛÂëÍ·");
+		//é€‰æ‹©åˆ°è¾¾åœ°ç‚¹
+		Log.v(Tag, "é€‰æ‹©åˆ°è¾¾åœ°ç‚¹");
+		solo.clickOnText("åˆ°è¾¾åœ°ç‚¹");
+		solo.clickOnText("é¦™æ¸¯-ä¸­æ¸¯ç å¤´");
 		solo.sleep(1000);
 		
-		//Ñ¡Ôñ³ö·¢ÈÕÆÚ
-		Log.v(Tag, "Ñ¡Ôñ³ö·¢ÈÕÆÚ");
-		solo.clickOnText("³ö·¢ÈÕÆÚ");
-		//»ñÈ¡ĞèÒªµã»÷µÄÊ±¼äÈÕ
+		//é€‰æ‹©å‡ºå‘æ—¥æœŸ
+		Log.v(Tag, "é€‰æ‹©å‡ºå‘æ—¥æœŸ");
+		solo.clickOnText("å‡ºå‘æ—¥æœŸ");
+		//è·å–éœ€è¦ç‚¹å‡»çš„æ—¶é—´æ—¥
 		int day = GetCurrentDay();
 		if(day<=10){
-			//dayÎªindex
+			//dayä¸ºindex
 			day = day + 30;
 		}else{
 			day = day + 39;
@@ -268,33 +268,33 @@ public class TestShipping extends ActivityInstrumentationTestCase2 {
 		solo.clickOnView(time_day);
 
 		
-		solo.clickOnButton("Ñ¡Ôñº½°à");
+		solo.clickOnButton("é€‰æ‹©èˆªç­");
 		
-		//»ñÈ¡º½°àÁĞ±í,¹Ì¶¨Ñ¡È¡µ±Ç°ÄÜÑ¡È¡µÄ×îºóµÄº½°à
+		//è·å–èˆªç­åˆ—è¡¨,å›ºå®šé€‰å–å½“å‰èƒ½é€‰å–çš„æœ€åçš„èˆªç­
 //		ArrayList<TextView> list = solo.clickInList(0);
 //		if (list.isEmpty()){
-//			solo.clickOnText("Ç°Ò»Ìì");
+//			solo.clickOnText("å‰ä¸€å¤©");
 //		}
 		solo.sleep(500);
 		solo.clickInList(3, 0);
 		
 		
-		solo.clickOnText("ÆÕÍ¨²Õ");
-		solo.clickOnText("Í·µÈ²Õ");
+		solo.clickOnText("æ™®é€šèˆ±");
+		solo.clickOnText("å¤´ç­‰èˆ±");
 		
 		solo.clickOnButton(3);
 		solo.clickOnButton(5);
-		solo.clickOnText("Á¢¼´¹ºÆ±");
+		solo.clickOnText("ç«‹å³è´­ç¥¨");
 		
 		if(solo.waitForDialogToOpen(1000)){
-			Log.v(Tag,"³ÉÈËÆ±ºÍ¶ùÍ¯Æ±²»Ò»ÖÂ");
-			if(solo.searchText("ÌáÊ¾")){
-				solo.clickOnButton("¼ÌĞø");
+			Log.v(Tag,"æˆäººç¥¨å’Œå„¿ç«¥ç¥¨ä¸ä¸€è‡´");
+			if(solo.searchText("æç¤º")){
+				solo.clickOnButton("ç»§ç»­");
 			}
 		}
 		
 		SelectPayWay(is_login);
-		Log.v(Tag,"Íê³ÉÂò´¬Æ±");
+		Log.v(Tag,"å®Œæˆä¹°èˆ¹ç¥¨");
 	}
 	
 	public void testOrderDoubleTicket() throws Exception{
@@ -303,24 +303,24 @@ public class TestShipping extends ActivityInstrumentationTestCase2 {
 		solo.waitForActivity(LAUNCHER_ACTIVITY_FULL_CLASSNAME, 5000);
 		is_login=IsLogin();
 		
-		//µã»÷½øÈëÂò´¬Æ±µÄÒ³Ãæ
-		View BuyTicket = solo.getCurrentActivity().findViewById(3);//3¡¢4¡¢5·Ö±ğ´ú±íÖ÷Òªµ±ÖĞµÄ¿Éµã»÷µÄÈı¸ö£¬°´Ë³Ğò½øĞĞ
+		//ç‚¹å‡»è¿›å…¥ä¹°èˆ¹ç¥¨çš„é¡µé¢
+		View BuyTicket = solo.getCurrentActivity().findViewById(3);//3ã€4ã€5åˆ†åˆ«ä»£è¡¨ä¸»è¦å½“ä¸­çš„å¯ç‚¹å‡»çš„ä¸‰ä¸ªï¼ŒæŒ‰é¡ºåºè¿›è¡Œ
 		solo.clickOnView(BuyTicket);
 		
-		solo.clickOnRadioButton(1);//Ò³ÃæÊ¹ÓÃRadioButton(µ¥³Ì)Îª0£¬Íù·µÎª1
+		solo.clickOnRadioButton(1);//é¡µé¢ä½¿ç”¨RadioButton(å•ç¨‹)ä¸º0ï¼Œå¾€è¿”ä¸º1
 		
-		solo.clickOnText("³ö·¢µØµã");
-		solo.clickOnText("¹ãÖİ-·¬Ø®Á«»¨É½");
+		solo.clickOnText("å‡ºå‘åœ°ç‚¹");
+		solo.clickOnText("å¹¿å·-ç•ªç¦ºè²èŠ±å±±");
 		solo.sleep(1000);
 		
-		solo.clickOnText("µ½´ïµØµã");
-		solo.clickOnText("Ïã¸Û-ÖĞ¸ÛÂëÍ·");
+		solo.clickOnText("åˆ°è¾¾åœ°ç‚¹");
+		solo.clickOnText("é¦™æ¸¯-ä¸­æ¸¯ç å¤´");
 		solo.sleep(1000);
 		
-		solo.clickOnText("³ö·¢ÈÕÆÚ");
+		solo.clickOnText("å‡ºå‘æ—¥æœŸ");
 		int day = GetCurrentDay();
 		if(day<=10){
-			//dayÎªindex
+			//dayä¸ºindex
 			day = day + 29;
 		}else{
 			day = day + 38;
@@ -331,31 +331,31 @@ public class TestShipping extends ActivityInstrumentationTestCase2 {
 		solo.clickOnView(time_day);
 		
 		
-		solo.clickOnText("³ö·¢º½°à");
+		solo.clickOnText("å‡ºå‘èˆªç­");
 		solo.sleep(1000);
 		solo.clickInList(3, 0);
 		
 	
-		//·µ³ÌÈÕÆÚÊ¹ÓÃÄ¬ÈÏÊäÈëµÄÈÕÆÚ
-		solo.clickOnText("·µ³Ìº½°à");
+		//è¿”ç¨‹æ—¥æœŸä½¿ç”¨é»˜è®¤è¾“å…¥çš„æ—¥æœŸ
+		solo.clickOnText("è¿”ç¨‹èˆªç­");
 		solo.clickInList(3, 0);
-		solo.clickOnButton("ÏÂ¶©µ¥");
+		solo.clickOnButton("ä¸‹è®¢å•");
 //		solo.clickOnButton(5);
-		solo.clickOnButton("Á¢¼´¹ºÆ±");
+		solo.clickOnButton("ç«‹å³è´­ç¥¨");
 		SelectPayWay(is_login);
-		Log.v(Tag,"¹ºÆ±Íê³É");
+		Log.v(Tag,"è´­ç¥¨å®Œæˆ");
 	}
 	
 	
-	//¸Ã·½·¨ĞèÒªÔÚÒ»¸ötest×î³õ½øĞĞµ÷ÓÃ
+	//è¯¥æ–¹æ³•éœ€è¦åœ¨ä¸€ä¸ªtestæœ€åˆè¿›è¡Œè°ƒç”¨
 	private boolean IsLogin(){
-		Log.v(Tag,"IsLogin¡£¡£¡£");
+		Log.v(Tag,"IsLoginã€‚ã€‚ã€‚");
 		solo.waitForActivity(LAUNCHER_ACTIVITY_FULL_CLASSNAME, 5000);
 		
-		//µã»÷½øÈëÂò´¬Æ±µÄÒ³Ãæ
-		View BuyTicket = solo.getCurrentActivity().findViewById(4);//3¡¢4¡¢5·Ö±ğ´ú±íÖ÷Òªµ±ÖĞµÄ¿Éµã»÷µÄÈı¸ö£¬°´Ë³Ğò½øĞĞ
+		//ç‚¹å‡»è¿›å…¥ä¹°èˆ¹ç¥¨çš„é¡µé¢
+		View BuyTicket = solo.getCurrentActivity().findViewById(4);//3ã€4ã€5åˆ†åˆ«ä»£è¡¨ä¸»è¦å½“ä¸­çš„å¯ç‚¹å‡»çš„ä¸‰ä¸ªï¼ŒæŒ‰é¡ºåºè¿›è¡Œ
 		solo.clickOnView(BuyTicket);
-		if(solo.searchText("¸öÈËÕË»§")){
+		if(solo.searchText("ä¸ªäººè´¦æˆ·")){
 			solo.goBack();
 			return true;
 		}
@@ -366,16 +366,16 @@ public class TestShipping extends ActivityInstrumentationTestCase2 {
 	
 	@SuppressWarnings("unused")
 	private void Logout(){
-		Log.v(Tag,"Logout eÆ±Í¨");
+		Log.v(Tag,"Logout eç¥¨é€š");
 		if(IsLogin()){
-			View BuyTicket = solo.getCurrentActivity().findViewById(4);//3¡¢4¡¢5·Ö±ğ´ú±íÖ÷Òªµ±ÖĞµÄ¿Éµã»÷µÄÈı¸ö£¬°´Ë³Ğò½øĞĞ
+			View BuyTicket = solo.getCurrentActivity().findViewById(4);//3ã€4ã€5åˆ†åˆ«ä»£è¡¨ä¸»è¦å½“ä¸­çš„å¯ç‚¹å‡»çš„ä¸‰ä¸ªï¼ŒæŒ‰é¡ºåºè¿›è¡Œ
 			solo.clickOnView(BuyTicket);
-			solo.clickOnButton("ÍË³öµÇÂ¼");
+			solo.clickOnButton("é€€å‡ºç™»å½•");
 		}
 		solo.goBack();
 	}
 	
-	//¿ÉÄÜÖØ¸´Ê¹ÓÃµ½µÄº¯Êı
+	//å¯èƒ½é‡å¤ä½¿ç”¨åˆ°çš„å‡½æ•°
 	private int GetCurrentDay(){
 		Time now_t = new Time();
 		now_t.setToNow();
@@ -387,52 +387,52 @@ public class TestShipping extends ActivityInstrumentationTestCase2 {
 	private void SelectPayWay(final boolean is_login){
 		Log.v(Tag,"Select Pay way");
 		
-		if(solo.searchText("Ñ¡ÔñÖ§¸¶·½Ê½")){
+		if(solo.searchText("é€‰æ‹©æ”¯ä»˜æ–¹å¼")){
 			if(!is_login){
-				Log.v(Tag,"Î´µÇÂ¼");
-				if(solo.searchText("µÇÂ¼/×¢²á")){
-					solo.clickOnText("µÇÂ¼/×¢²á");
+				Log.v(Tag,"æœªç™»å½•");
+				if(solo.searchText("ç™»å½•/æ³¨å†Œ")){
+					solo.clickOnText("ç™»å½•/æ³¨å†Œ");
 					solo.sleep(1000);
-					if(solo.searchText("»áÔ±ÖĞĞÄ")){
-						//×¢²áĞÂÓÃ»§
-						solo.clickOnButton("×¢²á");
-						if(solo.searchText("ÇëÊäÈëµç»°ºÅÂë")){
+					if(solo.searchText("ä¼šå‘˜ä¸­å¿ƒ")){
+						//æ³¨å†Œæ–°ç”¨æˆ·
+						solo.clickOnButton("æ³¨å†Œ");
+						if(solo.searchText("è¯·è¾“å…¥ç”µè¯å·ç ")){
 							solo.enterText(0, phone_no);
 							solo.sleep(5000);
-							if(solo.searchText("ºÅÂëÒÑ´æÔÚ£¬ÇëÖØĞÂÊäÈë")){
-								Log.v(Tag,"×¢²áÒ³ÃæOK¡£¡£¡£");
+							if(solo.searchText("å·ç å·²å­˜åœ¨ï¼Œè¯·é‡æ–°è¾“å…¥")){
+								Log.v(Tag,"æ³¨å†Œé¡µé¢OKã€‚ã€‚ã€‚");
 								solo.goBack();
 							}
 						}
 					
-						//½øÈëµÇÂ¼Ò³ÃæµÇÂ¼
+						//è¿›å…¥ç™»å½•é¡µé¢ç™»å½•
 						solo.clearEditText(0);
 						solo.clearEditText(1);
 						solo.enterText(0, phone_no);
 						solo.enterText(1, phone_sc);
-						solo.clickOnButton("µÇÂ¼");
+						solo.clickOnButton("ç™»å½•");
 					}
 				}
 			}else{
-				Log.v(Tag,"ÒÑ¾­µÇÂ¼");
-				solo.clickOnText("³äÖµ");
+				Log.v(Tag,"å·²ç»ç™»å½•");
+				solo.clickOnText("å……å€¼");
 				solo.goBack();
 			}
 			
 			switch(ticket_pay_way){
 			case 2:
-				solo.clickOnText("Ö§¸¶±¦¿ì½İÖ§¸¶");
+				solo.clickOnText("æ”¯ä»˜å®å¿«æ·æ”¯ä»˜");
 				break;
 			case 3:
-				solo.clickOnText("Î¢ĞÅÖ§¸¶");
+				solo.clickOnText("å¾®ä¿¡æ”¯ä»˜");
 				break;
 			default:
-				solo.clickOnText("ÏÖ½ğÕË»§Ö§¸¶");
+				solo.clickOnText("ç°é‡‘è´¦æˆ·æ”¯ä»˜");
 				break;
 			}
 		}
 
-		solo.clickOnButton("Á¢¼´Ö§¸¶");
+		solo.clickOnButton("ç«‹å³æ”¯ä»˜");
 		solo.sleep(5000);
 		solo.goBack();
 	}
